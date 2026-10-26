@@ -1,36 +1,19 @@
-*.iml
+# Gradle / 빌드 산출물
 .gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
+build/
 .externalNativeBuild
 .cxx
+/captures
+
+# 로컬 설정 (SDK 경로, NAS_BASE_URL, APP_TOKEN 등)
 local.properties
 
-# Project exclude paths
-/core/common/build/
-/core/database/build/
-/core/database/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/core/designsystem/build/
-/core/network/build/
-/core/network/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/core/presentation/build/
-/core/security/build/
-/core/security/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/core/ui/build/
-/data/user/build/
-/data/user/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/domain/user/build/
-/feature/connect/build/
-/feature/connect/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/feature/main/build/
-/feature/main/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/feature/splash/build/
-/feature/splash/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
+# IDE (Android Studio가 Gradle sync로 다시 만든다)
+.idea/
+*.iml
+
+# Claude Code 개인 설정
+.claude/settings.local.json
+
+# OS
+.DS_Store
