@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_app_name" translatable="false">Maple Days</string>
+    <string name="splash_tagline">오늘의 모험을 한 권에</string>
+    <string name="splash_data_source" translatable="false">Data based on NEXON Open API</string>
+</resources>

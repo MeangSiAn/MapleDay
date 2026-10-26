@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 오리지널 단풍잎(DESIGN.md 7.1). 단색이며 tint로 색을 입힌다. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M50,9C59,9 63,19 61,29C67,22 79,19 85,26C91,33 87,43 78,47C85,49 91,56 87,63C83,71 71,71 63,66C61,70 57,72 54,74L54,89Q54,94 50,94Q46,94 46,89L46,74C43,72 39,70 37,66C29,71 17,71 13,63C9,56 15,49 22,47C13,43 9,33 15,26C21,19 33,22 39,29C37,19 41,9 50,9Z" />
+</vector>

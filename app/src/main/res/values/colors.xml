@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- XML 테마(window/시스템 스플래시) 전용. Compose 색은 :core:designsystem MapleColors 토큰을 쓴다. -->
+    <!-- 블랙 테마 기본값: BlackSplash.background / BlackSplash.leaf / BlackColors.ground -->
+    <color name="splash_background">#FF0F0F0F</color>
+    <color name="splash_leaf">#FFFFAB66</color>
+    <color name="window_background">#FF141414</color>
+</resources>

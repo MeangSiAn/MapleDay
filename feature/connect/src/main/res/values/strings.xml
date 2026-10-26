@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="connect_title">계정을 연결하면\n더 많이 볼 수 있어요</string>
+    <string name="connect_object1">계정 캐릭터 한 번에 불러오기</string>
+    <string name="connect_object2">스타포스·큐브 강화 일지</string>
+    <string name="connect_object3">업적 모아 보기</string>
+
+    <string name="connect_nexon_api_key_title">NEXON Open API 키</string>
+    <string name="connect_nexon_api_key_error">키를 다시 확인해 주세요. test_ 또는 live_로 시작해요.</string>
+    <string name="connect_key_show">키 보기</string>
+    <string name="connect_key_hide">키 가리기</string>
+
+    <string name="connect_btn">연결하기</string>
+
+    <string name="connect_character_title">캐릭터 %1$d개를 찾았어요</string>
+    <string name="connect_character_title_sub">기록할 캐릭터를 골라 주세요.</string>
+    <string name="connect_character_level_class">Lv.%1$d %2$s</string>
+    <string name="connect_character_save_btn">%1$d명 기록하기</string>
+</resources>

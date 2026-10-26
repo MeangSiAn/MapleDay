@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 시스템 스플래시 아이콘. 108dp 캔버스의 가운데 안전 영역에 단풍잎(DESIGN.md 7.1)을 48dp로 배치 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.48"
+        android:scaleY="0.48"
+        android:translateX="30"
+        android:translateY="30">
+        <path
+            android:fillColor="@color/splash_leaf"
+            android:pathData="M50,9C59,9 63,19 61,29C67,22 79,19 85,26C91,33 87,43 78,47C85,49 91,56 87,63C83,71 71,71 63,66C61,70 57,72 54,74L54,89Q54,94 50,94Q46,94 46,89L46,74C43,72 39,70 37,66C29,71 17,71 13,63C9,56 15,49 22,47C13,43 9,33 15,26C21,19 33,22 39,29C37,19 41,9 50,9Z" />
+    </group>
+</vector>

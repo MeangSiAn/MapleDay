@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 블랙(기본) 테마 바탕. 스플래시 → 첫 Compose 프레임 사이 흰 깜빡임 방지 -->
+    <style name="Theme.MapleDay" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+
+    <!-- 시스템 스플래시(SplashScreen API, S01). 단색 배경만 가능해 radial 빛은 Compose MapleSplashBackground가 담당 -->
+    <style name="Theme.MapleDay.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_leaf</item>
+        <item name="postSplashScreenTheme">@style/Theme.MapleDay</item>
+    </style>
+</resources>
