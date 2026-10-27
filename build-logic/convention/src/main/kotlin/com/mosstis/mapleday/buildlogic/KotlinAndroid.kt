@@ -6,6 +6,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 
@@ -25,7 +26,12 @@ internal fun Project.configureAndroidApplication(extension: ApplicationExtension
         compileOptions {
             sourceCompatibility = JAVA_VERSION
             targetCompatibility = JAVA_VERSION
+            // minSdk 24에서 java.time 사용 (API 26+)
+            isCoreLibraryDesugaringEnabled = true
         }
+    }
+    dependencies {
+        add("coreLibraryDesugaring", libs.library("desugar-jdk-libs"))
     }
 }
 
@@ -39,7 +45,12 @@ internal fun Project.configureAndroidLibrary(extension: LibraryExtension) {
         compileOptions {
             sourceCompatibility = JAVA_VERSION
             targetCompatibility = JAVA_VERSION
+            // minSdk 24에서 java.time 사용 (API 26+)
+            isCoreLibraryDesugaringEnabled = true
         }
+    }
+    dependencies {
+        add("coreLibraryDesugaring", libs.library("desugar-jdk-libs"))
     }
 }
 

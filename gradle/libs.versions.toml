@@ -23,8 +23,11 @@ coroutines = "1.11.0"
 retrofit = "3.0.0"
 okhttp = "5.5.0"
 kotlinxSerialization = "1.9.0"
+desugarJdkLibs = "2.1.5"
 
 [libraries]
+# minSdk 24에서 java.time(LocalDate 등)을 쓰기 위한 core library desugaring
+desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
