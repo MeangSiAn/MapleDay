@@ -8,4 +8,5 @@ android {
 
 dependencies {
     implementation(project(":domain:user"))
+    implementation(project(":domain:character"))
 }
