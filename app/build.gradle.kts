@@ -29,6 +29,7 @@ dependencies {
     implementation(project(":feature:splash"))
     implementation(project(":feature:connect"))
     implementation(project(":data:user"))
+    implementation(project(":data:character"))
     implementation(project(":core:designsystem"))
 
     implementation(libs.androidx.activity.compose)

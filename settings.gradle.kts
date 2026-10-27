@@ -39,4 +39,6 @@ include(":feature:splash")
 include(":feature:connect")
 
 include(":domain:user")
+include(":domain:character")
 include(":data:user")
+include(":data:character")
