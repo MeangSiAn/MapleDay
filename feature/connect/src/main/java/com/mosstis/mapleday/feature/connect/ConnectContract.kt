@@ -16,10 +16,22 @@ object ConnectContract {
         SelectCharacter, // S05 계정 캐릭터 고르기
     }
 
+    /** 화면에 보여줄 오류. 예외 → 오류 매핑은 `ConnectErrorMapper.kt`. */
+    enum class ConnectError {
+        InvalidKey, // OPENAPI00005
+        Forbidden, // OPENAPI00002 메이플스토리용 키가 아님
+        NoCharacter, // 키는 유효하지만 캐릭터 0개
+        Network, // 오프라인·타임아웃
+        RateLimited, // 429, OPENAPI00007
+        Maintenance, // OPENAPI00010, 00011
+        DataPreparing, // OPENAPI00009
+        Unknown,
+    }
+
     data class State(
         val isVerifying: Boolean = false, // 검증중 여부 (로딩)
         val apiKey: String = "", // api key
-        val isKeyError : Boolean = false, // 키 입력 에러 체크
+        val error : ConnectError? = null, // 키 입력칸 아래 한 줄 오류 (null이면 없음)
         val step : Step = Step.Loading, // ui 스텝 (저장된 키 확인 중 → S04 또는 S05)
         val userCharacterList : List<AccountCharacter> = emptyList(),
         val selectedOcids : Set<String> = emptySet(), // S05에서 선택한 캐릭터 ocid

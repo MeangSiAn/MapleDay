@@ -29,7 +29,8 @@ class ConnectViewModel @Inject constructor(
     private fun loadLinkedAccount() {
         launchCatching(
             onError = {
-                updateState { copy(step = ConnectContract.Step.InputKey) }
+                // 저장된 키가 폐기됐거나 네트워크 문제면 S04에서 이유를 보여준다
+                updateState { copy(step = ConnectContract.Step.InputKey, error = it.toConnectError()) }
             }
         ) {
             val characters = getLinkedAccountCharactersUseCase()
@@ -47,7 +48,7 @@ class ConnectViewModel @Inject constructor(
         when (action) {
             ConnectContract.Action.BackClicked -> sendEffect(ConnectContract.Effect.NavigateBack)
             is ConnectContract.Action.KeyChange -> {
-                updateState { copy(apiKey = action.key, isKeyError = false) }
+                updateState { copy(apiKey = action.key, error = null) }
             }
             ConnectContract.Action.OnConnect -> connectUser()
             is ConnectContract.Action.ToggleCharacter -> {
@@ -67,7 +68,7 @@ class ConnectViewModel @Inject constructor(
         updateState { copy(isVerifying = true) }
         launchCatching(
             onError = {
-                updateState { copy(isVerifying = false, isKeyError = true) }
+                updateState { copy(isVerifying = false, error = it.toConnectError()) }
             }
         ) {
             val result = linkAccountUseCase(currentState.apiKey)

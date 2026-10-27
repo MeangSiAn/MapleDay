@@ -129,9 +129,9 @@ fun ConnectScreen(
                     }
                 )
 
-                if(uiState.isKeyError) {
+                uiState.error?.let { error ->
                     Text(
-                        text = stringResource(R.string.connect_nexon_api_key_error),
+                        text = stringResource(error.messageRes()),
                         style = MapleTheme.typography.body,
                         color = MapleTheme.colors.bad,
                     )

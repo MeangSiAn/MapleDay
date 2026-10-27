@@ -7,6 +7,13 @@
 
     <string name="connect_nexon_api_key_title">NEXON Open API 키</string>
     <string name="connect_nexon_api_key_error">키를 다시 확인해 주세요. test_ 또는 live_로 시작해요.</string>
+    <string name="connect_error_forbidden">메이플스토리용 키가 아니에요. 키 권한을 확인해 주세요.</string>
+    <string name="connect_error_no_character">이 계정에는 캐릭터가 없어요.</string>
+    <string name="connect_error_network">인터넷 연결을 확인해 주세요.</string>
+    <string name="connect_error_rate_limited">잠시 후 다시 시도해 주세요.</string>
+    <string name="connect_error_maintenance">메이플스토리 점검 중이에요.</string>
+    <string name="connect_error_data_preparing">넥슨이 데이터를 준비 중이에요.</string>
+    <string name="connect_error_unknown">연결하지 못했어요. 잠시 후 다시 시도해 주세요.</string>
     <string name="connect_key_show">키 보기</string>
     <string name="connect_key_hide">키 가리기</string>
 
