@@ -2,6 +2,7 @@ package com.mosstis.mapleday.core.network.di
 
 import com.mosstis.mapleday.core.network.BuildConfig
 import com.mosstis.mapleday.core.network.nas.AppTokenInterceptor
+import com.mosstis.mapleday.core.network.nas.NasTodayApi
 import com.mosstis.mapleday.core.network.nexon.NexonDirectApi
 import dagger.Module
 import dagger.Provides
@@ -90,6 +91,10 @@ internal object NetworkModule {
             .client(client)
             .addConverterFactory(json.asConverterFactory(JSON_MEDIA_TYPE.toMediaType()))
             .build()
+
+    @Provides
+    @Singleton
+    fun provideNasTodayApi(@NasClient retrofit: Retrofit): NasTodayApi = retrofit.create()
 
     private const val JSON_MEDIA_TYPE = "application/json"
 }
