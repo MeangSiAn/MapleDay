@@ -7,4 +7,5 @@ data class AccountCharacter(
     val world: String,
     val characterClass: String,
     val level: Int,
+    val characterImg : String? = null
 )

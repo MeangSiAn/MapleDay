@@ -11,4 +11,6 @@ interface CharacterRepository {
 
     /** 고른 캐릭터를 저장한다. 같은 ocid는 덮어쓴다. */
     suspend fun saveCharacters(characters: List<AccountCharacter>)
+
+    suspend fun getCharacter() : Flow<List<AccountCharacter>>
 }

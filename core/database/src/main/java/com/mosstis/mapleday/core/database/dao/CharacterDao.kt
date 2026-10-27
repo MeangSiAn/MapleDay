@@ -16,4 +16,7 @@ interface CharacterDao {
     // 저장된 캐릭터 존재 여부 체크
     @Query("SELECT EXISTS(SELECT 1 FROM character)")
     fun observeExists(): Flow<Boolean>
+
+    @Query("SELECT * FROM character")
+    fun getCharacter() : Flow<List<CharacterEntity>>
 }

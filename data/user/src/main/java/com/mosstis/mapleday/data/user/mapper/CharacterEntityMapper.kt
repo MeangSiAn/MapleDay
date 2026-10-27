@@ -11,3 +11,11 @@ internal fun AccountCharacter.toEntity(addedAt: Long) = CharacterEntity(
     level = level,
     addedAt = addedAt,
 )
+
+internal fun CharacterEntity.toDomain() = AccountCharacter(
+    ocid = ocid,
+    name = name,
+    world = world,
+    characterClass = characterClass,
+    level = level,
+)
