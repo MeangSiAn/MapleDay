@@ -2,4 +2,6 @@
 <resources>
     <string name="core_ui_checkbox_checked">선택됨</string>
     <string name="core_ui_checkbox_unchecked">선택 안 됨</string>
+    <string name="core_ui_exp_label">EXP</string>
+    <string name="core_ui_exp_rate">%1$.3f%%</string>
 </resources>
