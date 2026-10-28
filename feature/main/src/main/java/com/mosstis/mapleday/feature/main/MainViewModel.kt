@@ -48,6 +48,7 @@ class MainViewModel @Inject constructor(
             }
         ) {
             getMyCharactersUseCase()
+                .distinctUntilChanged()
                 .onEach { list ->
                     updateState { copy(characterList = list) }
                     refreshIfNeeded()
