@@ -24,6 +24,7 @@ retrofit = "3.0.0"
 okhttp = "5.5.0"
 kotlinxSerialization = "1.9.0"
 desugarJdkLibs = "2.1.5"
+coil = "3.3.0"
 
 [libraries]
 # minSdk 24에서 java.time(LocalDate 등)을 쓰기 위한 core library desugaring
@@ -63,6 +64,9 @@ retrofit-converter-kotlinx-serialization = { group = "com.squareup.retrofit2", n
 okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "okhttp" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+# 이미지 로딩 (캐릭터 초상, 코디 등). 네트워크는 프로젝트가 쓰는 OkHttp로
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 
 # build-logic (convention plugin) 컴파일용

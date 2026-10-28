@@ -5,7 +5,7 @@ import com.mosstis.mapleday.buildlogic.library
 import com.mosstis.mapleday.buildlogic.libs
 
 /**
- * :feature:* 모듈 공통 설정 = library + compose + hilt + type-safe navigation + core UI/presentation 의존.
+ * :feature:* 모듈 공통 설정 = library + compose + hilt + type-safe navigation + Coil + core UI/presentation 의존.
  * domain 의존은 feature마다 다르므로 각 모듈에서 선언한다.
  */
 class AndroidFeatureConventionPlugin : Plugin<Project> {
@@ -26,6 +26,10 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
             add("implementation", libs.library("androidx-lifecycle-viewmodel-compose"))
             add("implementation", libs.library("androidx-hilt-lifecycle-viewmodel-compose"))
             add("implementation", libs.library("androidx-navigation-compose"))
+
+            // 이미지 로딩 (AsyncImage). coil-network-okhttp가 있어야 URL 이미지를 불러온다
+            add("implementation", libs.library("coil-compose"))
+            add("implementation", libs.library("coil-network-okhttp"))
         }
     }
 }
