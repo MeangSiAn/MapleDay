@@ -20,7 +20,7 @@ class CharacterRepositoryImpl @Inject constructor(
         characterDao.upsertAll(characters.map { it.toEntity(addedAt = now) })
     }
 
-    override suspend fun getCharacter(): Flow<List<AccountCharacter>> {
+    override fun getCharacter(): Flow<List<AccountCharacter>> {
         return characterDao.getCharacter().map { entities ->
             entities.map { it.toDomain() }
         }

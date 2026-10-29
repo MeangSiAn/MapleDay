@@ -11,7 +11,7 @@ import javax.inject.Inject
 class GetMyCharactersUseCase @Inject constructor(
     private val repository : CharacterRepository
 ) {
-    suspend operator fun invoke() : Flow<List<AccountCharacter>> {
+    operator fun invoke() : Flow<List<AccountCharacter>> {
         return repository.getCharacter()
     }
 }
