@@ -9,7 +9,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.mosstis.mapleday.core.designsystem.theme.MapleTheme
 import com.mosstis.mapleday.core.designsystem.theme.MapleThemeType
-import com.mosstis.mapleday.navigation.AppNavHost
+import com.mosstis.mapleday.navigation.MapleDayApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
         )
         setContent {
             MapleTheme(theme = theme) {
-                AppNavHost()
+                MapleDayApp()
             }
         }
     }

@@ -6,7 +6,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import com.mosstis.mapleday.feature.connect.ConnectNavRoute
 import com.mosstis.mapleday.feature.connect.connectScreen
 import com.mosstis.mapleday.feature.connect.navigateToConnect
 import com.mosstis.mapleday.feature.main.mainScreen
@@ -52,10 +51,11 @@ fun AppNavHost(
         connectScreen(
             onBack = navController::popBackStack,
             onFinished = {
-                // 저장 후 뒤로가기로 계정 연결 화면에 돌아오지 않도록 백스택에서 제거
+                // 백스택을 모두 비우고 Main(첫 탭)을 바닥에 둔다.
+                // 탭 안에서 Connect로 들어온 경우(M04)에도 Main이 두 번 쌓이지 않게 한다 (navigateToTab의 전제)
                 navController.navigateToMain(
                     navOptions {
-                        popUpTo<ConnectNavRoute> { inclusive = true }
+                        popUpTo(navController.graph.id) { inclusive = true }
                     },
                 )
             },

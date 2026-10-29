@@ -31,6 +31,7 @@ dependencies {
     implementation(project(":data:user"))
     implementation(project(":data:character"))
     implementation(project(":core:designsystem"))
+    implementation(project(":core:ui"))
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.splashscreen)

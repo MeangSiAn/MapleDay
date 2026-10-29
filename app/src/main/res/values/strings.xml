@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MapleDay</string>
+
+    <string name="tab_main">메인</string>
 </resources>
