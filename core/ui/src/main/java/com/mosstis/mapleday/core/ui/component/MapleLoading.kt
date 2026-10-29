@@ -26,6 +26,7 @@ fun MapleLoading(
     isLoading: Boolean,
     modifier: Modifier = Modifier,
 ) {
+
     AnimatedVisibility(visible = isLoading, enter = fadeIn(), exit = fadeOut()) {
         Box(
             modifier = modifier
