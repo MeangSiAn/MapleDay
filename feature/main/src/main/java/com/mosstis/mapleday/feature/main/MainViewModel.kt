@@ -80,6 +80,8 @@ class MainViewModel @Inject constructor(
     // 아직 안 받은 캐릭터가 있거나, 10분 지났거나, 강제(당겨서 새로고침)면 API 재호출
     private fun refreshIfNeeded(force: Boolean = false) {
         if(refreshJob?.isActive == true) return
+        // 토큰 오류는 다시 불러도 결과가 같으니 재호출하지 않는다
+        if(currentState.error == MainContract.MainError.TokenError) return
 
         val ocids = currentState.characterList.map { it.ocid }
         if(ocids.isEmpty()) return
@@ -93,14 +95,14 @@ class MainViewModel @Inject constructor(
         ) }
 
         refreshJob = launchCatching(
-            onError = {
-                updateState { copy(isRefreshing = false) }
+            onError = { e ->
+                updateState { copy(isRefreshing = false, error = e.toMainError()) }
             }
         ) {
             refreshTodayUseCase(ocids)
             lastRefreshAt = System.currentTimeMillis()
             refreshedOcids = ocids.toSet()
-            updateState { copy(isRefreshing = false) }
+            updateState { copy(isRefreshing = false, error = null) }
         }
     }
 

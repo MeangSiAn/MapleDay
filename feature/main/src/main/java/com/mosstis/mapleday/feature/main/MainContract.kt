@@ -8,11 +8,17 @@ import com.mosstis.mapleday.domain.user.model.AccountCharacter
 
 object MainContract {
 
+    enum class MainError {
+        TokenError, // APP_TOKEN_INVALID 에러
+        Network, // 네트워크 에러
+        Unknown
+    }
     data class State(
         val isLoading : Boolean = false,
         val characterList: List<AccountCharacter> = emptyList(),
         val today : TodayOverview? = null, // 대표 캐릭터 Today 데이터
         val isRefreshing : Boolean = false, // 새로고침
+        val error : MainError? = null
     ) : UiState
 
     sealed interface Action : UiAction {

@@ -2,6 +2,7 @@ package com.mosstis.mapleday.feature.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -21,7 +22,7 @@ fun MainRoute(
         onStopOrDispose {  }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.safeDrawingPadding().fillMaxSize()) {
         MainScreen(
             uiState = uiState,
             onAction = viewModel::onAction,

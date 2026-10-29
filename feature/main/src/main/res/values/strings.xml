@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="main_character_info">%1$s Lv.%2$s %3$s</string>
+
+    <string name="main_reset_title">초기화까지</string>
+    <string name="main_reset_daily">일일</string>
+    <string name="main_reset_weekly">주간</string>
+    <string name="main_remaining_hours_minutes">%1$d시간 %2$d분</string>
+    <string name="main_remaining_days_hours">%1$d일 %2$d시간</string>
+    <string name="main_remaining_unknown">-</string>
+
+    <string name="main_weekly_boss_title">주간 보스</string>
+    <string name="main_weekly_boss_limit">/%1$d</string>
+
+    <string name="main_error_token">앱 인증에 문제가 발생하였습니다.\n앱을 재접속 해주세요</string>
+    <string name="main_error_network">네트워크 연결을 확인해주세요.</string>
+    <string name="main_error_unknown">시스템장애가 발생하였습니다.</string>
 </resources>
