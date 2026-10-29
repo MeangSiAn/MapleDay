@@ -1,5 +1,6 @@
 package com.mosstis.mapleday.data.character.repository
 
+import com.mosstis.mapleday.core.network.error.apiSafeCall
 import com.mosstis.mapleday.core.network.error.nexonCall
 import com.mosstis.mapleday.core.network.nas.NasTodayApi
 import com.mosstis.mapleday.data.character.mapper.toDomain
@@ -58,7 +59,7 @@ class CharacterDetailRepositoryImpl @Inject constructor(
 
     // [NAS → 캐시 쓰기] NAS 호출 → 매퍼(toDomain) → 성공한 블록만 캐시에 저장 / 나중: Room에 upsert
     override suspend fun refreshToday(ocids: List<String>) {
-        val result = nexonCall {
+        val result = apiSafeCall {
             nasTodayApi.getToday(ocids.joinToString(","))
         }.toDomain(now = System.currentTimeMillis())
 
