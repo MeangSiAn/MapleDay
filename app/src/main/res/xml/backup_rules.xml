@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-   Sample backup rules file; uncomment and customize as necessary.
-   See https://developer.android.com/guide/topics/data/autobackup
-   for details.
-   Note: This file is ignored for devices older than API 31
-   See https://developer.android.com/about/versions/12/backup-restore
+   API 30 이하 Auto Backup 규칙. See https://developer.android.com/guide/topics/data/autobackup
+   Room DB는 Keystore 키로 암호화한 API 키를 담고 있어 다른 기기에서 복호화할 수 없다 → 제외 (data_extraction_rules.xml과 동일).
 -->
 <full-backup-content>
-    <!--
-   <include domain="sharedpref" path="."/>
-   <exclude domain="sharedpref" path="device.xml"/>
--->
+    <exclude domain="database" path="." />
 </full-backup-content>

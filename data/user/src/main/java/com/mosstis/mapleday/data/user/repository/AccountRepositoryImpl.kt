@@ -11,6 +11,7 @@ import com.mosstis.mapleday.domain.user.model.AccountCharacter
 import com.mosstis.mapleday.domain.user.repository.AccountRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.security.GeneralSecurityException
 import javax.inject.Inject
 
 class AccountRepositoryImpl @Inject constructor(
@@ -24,8 +25,15 @@ class AccountRepositoryImpl @Inject constructor(
 
     override suspend fun fetchLinkedAccountCharacters(): List<AccountCharacter>? {
         val account = accountDao.get() ?: return null
-        val apiKey = withContext(Dispatchers.Default) {
-            userKeyStore.decrypt(EncryptedData(cipherText = account.encryptedApiKey, iv = account.iv))
+        val apiKey = try {
+            withContext(Dispatchers.Default) {
+                userKeyStore.decrypt(EncryptedData(cipherText = account.encryptedApiKey, iv = account.iv))
+            }
+        } catch (e: GeneralSecurityException) {
+            // Keystore 키가 사라졌거나 무효화됨(다른 기기로 복원, 잠금 설정 변경 등) → 다시 복호화할 방법이 없다.
+            // 깨진 계정을 지우고 "연결 안 됨"으로 돌려 키를 다시 입력받는다.
+            accountDao.clear()
+            return null
         }
         return fetchAccountCharacters(apiKey)
     }
