@@ -32,7 +32,6 @@ fun MainCharacterInfoCard(modifier: Modifier = Modifier, character : CharacterBa
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(horizontal = 12.dp, vertical = 16.dp)
     ) {
         Column() {
             Row(verticalAlignment = Alignment.CenterVertically) {
